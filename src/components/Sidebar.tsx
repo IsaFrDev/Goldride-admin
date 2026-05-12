@@ -7,9 +7,7 @@ import {
   Map, 
   Settings, 
   LogOut, 
-  ShieldCheck,
   TrendingUp,
-  UserPlus,
   Clock
 } from 'lucide-react';
 import './Sidebar.css';

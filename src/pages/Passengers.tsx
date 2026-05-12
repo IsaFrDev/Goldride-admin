@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, UserPlus, MoreHorizontal, Filter, Edit2, Trash2, X } from 'lucide-react';
+import { Search, UserPlus, MoreHorizontal, Edit2, Trash2, X } from 'lucide-react';
 import { adminAPI } from '../services/api';
 import './Common.css';
 
