@@ -54,6 +54,10 @@ function App() {
     initAuth();
   }, [bypassLogin]);
 
+  const [sidebarOpen, setSidebarOpen] = React.useState(false);
+
+  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
+
   if (isLoading) {
     return (
       <div style={{ 
@@ -112,10 +116,10 @@ function App() {
 
   return (
     <Router>
-      <div className="admin-layout">
+      <div className={`admin-layout ${sidebarOpen ? 'sidebar-open' : ''}`}>
         <Sidebar />
-        <main className="main-content">
-          <Navbar />
+        <main className="main-content" onClick={() => sidebarOpen && setSidebarOpen(false)}>
+          <Navbar onMenuClick={toggleSidebar} />
           <div className="page-container">
             <Routes>
               <Route path="/" element={<Dashboard />} />

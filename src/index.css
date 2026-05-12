@@ -115,6 +115,20 @@ ul {
 
 @media (max-width: 992px) {
   .main-content {
-    margin-left: 0;
+    margin-left: 0 !important;
   }
+  
+  .page-container {
+    padding: 16px;
+    padding-top: calc(var(--nav-height) + 16px);
+  }
+}
+
+.sidebar-open .main-content::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 95;
+  backdrop-filter: blur(4px);
 }

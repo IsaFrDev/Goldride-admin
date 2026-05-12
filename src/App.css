@@ -59,14 +59,17 @@
 }
 
 /* Global Table Styles */
-.table-responsive {
+.table-responsive, .table-wrapper {
   width: 100%;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1rem;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
+  min-width: 650px; /* Force minimum width to allow scrolling on mobile */
 }
 
 th {
@@ -89,4 +92,42 @@ td {
 
 tr:last-child td {
   border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 22px;
+  }
+  
+  .page-subtitle {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 20px;
+  }
+}
+
+/* Fix for small grids */
+.stats-grid, .charts-grid {
+  display: grid;
+  gap: 20px;
+}
+
+@media (max-width: 1200px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
 }

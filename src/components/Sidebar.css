@@ -88,3 +88,23 @@
 .logout-btn:hover {
   background-color: rgba(255, 82, 82, 0.1);
 }
+
+@media (max-width: 992px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: none;
+  }
+  
+  .sidebar-open .sidebar {
+    transform: translateX(0);
+    box-shadow: 20px 0 50px rgba(0,0,0,0.5);
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100%;
+    max-width: 300px;
+  }
+}

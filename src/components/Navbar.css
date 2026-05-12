@@ -271,3 +271,48 @@
 .notif-item:hover .notif-close {
   opacity: 1;
 }
+
+@media (max-width: 992px) {
+  .navbar {
+    width: 100%;
+    padding: 0 16px;
+  }
+  
+  .search-bar {
+    display: none; /* Hide search on mobile header to save space */
+  }
+}
+
+@media (max-width: 480px) {
+  .user-info {
+    display: none;
+  }
+  
+  .divider {
+    display: none;
+  }
+  
+  .action-btn {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+  background: var(--surface-light);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-right: 12px;
+}
+
+@media (max-width: 992px) {
+  .menu-toggle {
+    display: flex;
+  }
+}

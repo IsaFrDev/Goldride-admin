@@ -5,12 +5,17 @@ import {
   User, 
   ChevronDown,
   AlertTriangle,
-  X
+  X,
+  Menu
 } from 'lucide-react';
 import { adminSocketService } from '../services/socket';
 import './Navbar.css';
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  onMenuClick?: () => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
   const [notifications, setNotifications] = useState<any[]>([]);
   const [showDropdown, setShowDropdown] = useState(false);
 
@@ -32,9 +37,14 @@ const Navbar: React.FC = () => {
 
   return (
     <header className="navbar glass">
-      <div className="search-bar">
-        <Search size={18} color="#94A3B8" />
-        <input type="text" placeholder="Qidirish... (id, ism, raqam)" />
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <button className="menu-toggle" onClick={onMenuClick}>
+          <Menu size={20} />
+        </button>
+        <div className="search-bar">
+          <Search size={18} color="#94A3B8" />
+          <input type="text" placeholder="Qidirish... (id, ism, raqam)" />
+        </div>
       </div>
 
       <div className="nav-actions">
