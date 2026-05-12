@@ -11,7 +11,7 @@ class AdminSocketService {
         if (!token) return;
 
         // Use the same base URL as the API but with ws://
-        const wsBase = import.meta.env.VITE_WS_URL || `ws://${window.location.hostname}:8000`;
+        const wsBase = import.meta.env.VITE_WS_URL || "wss://goldride-backend-production.up.railway.app";
         const wsUrl = `${wsBase}/ws/admin/?token=${token}`;
         
         this.socket = new WebSocket(wsUrl);

@@ -95,7 +95,7 @@ const Navbar: React.FC = () => {
         </div>
 
         <a 
-          href="http://localhost:5500" 
+          href={import.meta.env.VITE_SITE_URL || "http://localhost:5500"} 
           target="_blank" 
           className="visit-site-btn glass"
           style={{ 
